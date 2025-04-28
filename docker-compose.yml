@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  todo-app:
+    build: .
+    container_name: todo-app
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./tasks.db:/root/app_todo/tasks.db  # Utrzymanie bazy poza kontenerem
+    restart: unless-stopped
